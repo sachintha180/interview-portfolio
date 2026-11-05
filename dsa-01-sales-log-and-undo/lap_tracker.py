@@ -2,7 +2,7 @@ class LapTracker:
     """A record of one runner's lap times, with undo and the fastest lap.
 
     Attributes:
-        laps: The lap times in whole seconds, as a stack, latest last.
+        laps: The lap times in whole seconds, as a stack with the latest lap on top.
     """
 
     def __init__(self) -> None:

@@ -3,8 +3,8 @@ class Editor:
 
     Attributes:
         price: The item's current price in rupees.
-        undo_stack: The prices that undo can put back, latest last.
-        redo_stack: The prices that redo can put back, latest last.
+        undo_stack: The prices undo can put back, with the latest price on top.
+        redo_stack: The prices redo can put back, with the latest price on top.
     """
 
     def __init__(self, price: int) -> None:
@@ -18,8 +18,8 @@ class Editor:
     def edit(self, price: int) -> None:
         """Change the item's price, in O(1) time.
 
-        The change can be undone. Every change waiting to be redone is
-        forgotten.
+        Undo can take this change back. The edit clears every change
+        waiting to be redone.
 
         Args:
             price: The new price in rupees.
@@ -36,7 +36,7 @@ class Editor:
         raise NotImplementedError
 
     def redo(self) -> None:
-        """Put back the latest change that was undone, in O(1) time.
+        """Put back the latest change that undo took back, in O(1) time.
 
         Raises:
             IndexError: If no change is left to redo, with the message

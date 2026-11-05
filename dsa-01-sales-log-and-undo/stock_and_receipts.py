@@ -7,7 +7,7 @@ def longest_sold_out_streak(
 
     Args:
         stock_flags: One flag for each item on each day, in order of day.
-        item_code: The item to count.
+        item_code: The code of the item to check.
 
     Returns:
         The longest run of sold-out days, or 0 if the item never sold out.
@@ -16,10 +16,10 @@ def longest_sold_out_streak(
 
 
 def receipt_template_balanced(template: str) -> bool:
-    """Return whether every bracket in a receipt template closes in order.
+    """Return whether every bracket in a receipt template closes in the right order.
 
-    The brackets are { with }, [ with ], and ( with ). Runs in O(n)
-    time, where n is the number of characters.
+    Each { closes with }, each [ with ], and each ( with ). Runs in O(n)
+    time, where n is the number of characters in the template.
 
     Args:
         template: The receipt template.

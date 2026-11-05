@@ -54,10 +54,10 @@ class SalesLog:
         raise NotImplementedError
 
     def drop_before(self, timestamp: int) -> int:
-        """Remove every sale whose timestamp is below the given one.
+        """Remove every sale whose timestamp is below `timestamp`.
 
         Runs in O(n) time, where n is the number of sales removed. A sale
-        at exactly the given timestamp stays.
+        at exactly `timestamp` stays.
 
         Args:
             timestamp: The earliest timestamp to keep.
